@@ -217,6 +217,56 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
+/* Education Section */
+
+.education-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 5px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scroll-padding: 10px;
+}
+
+.education-cards {
+    flex: 0 0 40%;
+    min-width: 280px;
+    scroll-snap-align: start;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px 20px;
+    margin: auto;
+    transition: transform 0.3s ease;
+}
+
+.education-cards:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.education-cards i {
+    font-size: 40px;
+    color: #4a6cf7;
+    margin-bottom: 15px;
+}
+
+.education-cards h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.education-cards ul {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
 /* Skills Section */
 
 .skills-container {
@@ -333,8 +383,8 @@ nav ul li a:hover {
 }
 
 .internship-details .icon {
-  font-size: 30px;
-  color: #8000ff;
+  font-size: 40px;
+  color: #4a6cf7;
   margin-bottom: 10px;
   margin-left: 250px;
 }
@@ -381,11 +431,11 @@ nav ul li a:hover {
   width: 100%;
   height: auto;
   display: block;
-  border: 2px solid #ccc;
-  border-radius: 8px; 
+  margin: 0 auto;
   padding: 4px;
   object-fit: contain;
 }
+
 
 /* Project Section */
 
@@ -419,7 +469,7 @@ nav ul li a:hover {
 }
 
 .project-cards i {
-    font-size: 50px;
+    font-size: 40px;
     color: #4a6cf7;
     margin-bottom: 15px;
 }
@@ -739,24 +789,25 @@ footer {
     }
 }
 
-@media screen and (max-width: 768px) {
-  .internship-card {
-    padding: 16px;
-  }
-
-  .internship-content {
-    gap: 16px;
-  }
-
-  .internship-image {
-    max-width: 250px;
-    min-width: 100px;
-    max-height: 350px;
-    min-height: 150px;
-    margin: 60px 10px 60px 10px;
+@media (max-width: 1200px) {
+  .internship-container {
+    width: 80%;
+    margin: 0 auto;
   }
 }
 
-.internship-details .icon {
-  margin-left: 200px;
+@media (max-width: 768px) {
+  .internship-container {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .internship-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .internship-image {
+    max-width: 45%;
+  }
 }
