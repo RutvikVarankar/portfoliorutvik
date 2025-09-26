@@ -21,14 +21,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();                                 // Use SMTP
         $mail->Host       = 'smtp.gmail.com';            // Gmail SMTP server
         $mail->SMTPAuth   = true;                        // Enable authentication
-        $mail->Username   = 'rutvikvarankar06@gmail.com';       // 🔹 Your Gmail address
-        $mail->Password   = 'shgh khpl somj ymat';         // 🔹 App Password (not normal password)
+        $mail->Username   = 'rutvikvarankar06@gmail.com';       // Your Gmail address
+        $mail->Password   = 'shgh khpl somj ymat';         // App Password (not normal password)
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Encryption
         $mail->Port       = 587;                         // TLS port
 
         // Recipients
         $mail->setFrom('rutvikvarankar06@gmail.com', 'Portfolio Website');
-        $mail->addAddress('rutvikvarankar06@gmail.com'); // 🔹 Where you want to receive emails
+        $mail->addAddress('rutvikvarankar06@gmail.com'); // Where you want to receive emails
 
         // Optional: reply to sender
         $mail->addReplyTo($email, $name);
