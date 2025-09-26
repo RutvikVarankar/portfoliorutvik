@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Recipients
         $mail->setFrom('rutvikvarankar06@gmail.com', 'Portfolio Website');
-        $mail->addAddress('rutvikvarankar06@gmail.com'); // Where you want to receive emails
+        $mail->addAddress('rutvikvarankar06@gmail.com');Where you want to receive emails
 
         // Optional: reply to sender
         $mail->addReplyTo($email, $name);
