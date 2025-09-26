@@ -72,7 +72,7 @@ body {
 }
 
 .btn:hover {
-    background: #2980b9;
+    background: #111acb;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -839,7 +839,7 @@ nav ul li a:hover {
 .chatbot-controls button:hover {
   background: red;
   border-radius: 4px;
-}*/
+} */
 
 /* Footer */
 
