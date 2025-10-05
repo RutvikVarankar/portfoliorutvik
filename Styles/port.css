@@ -20,14 +20,14 @@ html {
 }
 
 body {
-  margin: 30;
-  padding: 0;
-  background: linear-gradient(135deg, #ffffff 0%, #f7bee7 100%); 
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-  color: #333; 
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f7bee7 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
 }
 
 .container {
@@ -79,33 +79,33 @@ body {
 
 /* Header Styles */
 header {
-  background: linear-gradient(to right, #6a11cb 0%, #2595fc 100%); 
-  color: white;
-  padding: 20px 40px;
-  position: sticky; 
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: linear-gradient(to right, #6a11cb 0%, #2595fc 100%);
+    color: white;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 #header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 0;
 }
 
 .logo-left {
     display: flex;
     align-items: center;
-    gap: 15px; 
+    gap: 15px;
 }
 
 .circle {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: rgb(0,0,0); 
+    background-color: rgb(0, 0, 0);
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -124,9 +124,12 @@ header {
     color: var(--light-color);
 }
 
+/* Navigation Styles */
 nav ul {
     display: flex;
     list-style: none;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 nav ul li {
@@ -144,10 +147,39 @@ nav ul li a:hover {
     color: var(--primary-color);
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* When menu is open, animate icon into an "X" */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
 /* Hero Section */
 #hero {
     height: 100vh;
-    
     color: var(--dark-color);
     display: flex;
     align-items: center;
@@ -155,23 +187,23 @@ nav ul li a:hover {
 }
 
 .hero-section {
-  position: relative;
-  color: white;
-  text-align: center;
-  padding: 100px 20px;
-  z-index: 1;
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    z-index: 1;
 }
 
 .hero-section::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); 
-  z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
 }
-
 
 #hero h2 {
     font-size: 3.5rem;
@@ -184,7 +216,7 @@ nav ul li a:hover {
 
 #hero p {
     font-size: 1.3rem;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
 }
 
 /* About Section */
@@ -198,13 +230,13 @@ nav ul li a:hover {
     flex: 1;
 }
 
-.about-img{
-  width: 430px;          
-  height: 430px;         
-  border-radius: 60%;  
-  object-fit: cover;    
-  border: 3px solid #fff; 
-  box-shadow: 0 8px 8px rgba(0,0,0,0.1); 
+.about-img {
+    width: 430px;
+    height: 430px;
+    border-radius: 60%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about-text {
@@ -267,7 +299,7 @@ nav ul li a:hover {
 }
 
 .education-cards {
-    flex: 0 0 40%;
+    flex: 0 0 50%;
     min-width: 280px;
     scroll-snap-align: start;
     background: #fff;
@@ -306,20 +338,20 @@ nav ul li a:hover {
 /* Skills Section */
 
 .skills-container {
-  display: grid;
-  grid-auto-flow: column;          
-  grid-template-rows: repeat(2, 1fr);  
-  grid-auto-columns: 367px;      
-  gap: 20px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-columns: 367px;
+    gap: 20px;
 
-  overflow-x: auto;              
-  overflow-y: hidden;       
-  white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
 
-  height: 540px;                
-  padding: 10px;
-  scrollbar-color: #888 #fff;    
-  scrollbar-width: thin;
+    height: 540px;
+    padding: 10px;
+    scrollbar-color: #888 #fff;
+    scrollbar-width: thin;
 }
 
 .skills-container::-webkit-scrollbar {
@@ -331,15 +363,15 @@ nav ul li a:hover {
     border-radius: 4px;
 }
 
-.skill{
-  flex: 0 0 calc(33.333% - 13.33px); 
-  scroll-snap-align: start;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  text-align: center;
-  padding: 20px 10px;
+.skill {
+    flex: 0 0 calc(33.333% - 13.33px);
+    scroll-snap-align: start;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px 10px;
 }
 
 .skill:hover {
@@ -358,118 +390,118 @@ nav ul li a:hover {
 }
 
 .skill p {
-  font-size: 1rem;
-  color: #333;
-  margin: 0 10px;
-  white-space: normal; 
-  word-wrap: break-word; 
+    font-size: 1rem;
+    color: #333;
+    margin: 0 10px;
+    white-space: normal;
+    word-wrap: break-word;
 }
 
 /* Internship Project */
 
 .internship-section {
-  padding: 60px 20px;
-  text-align: center;
+    padding: 60px 20px;
+    text-align: center;
 }
 
 .section-title {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  position: relative;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
 }
 
 .section-title::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background-color: #4c00ff;
-  margin: 8px auto 0;
-  border-radius: 2px;
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #4c00ff;
+    margin: 8px auto 0;
+    border-radius: 2px;
 }
 
 .internship-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
 }
 
 .internship-card {
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  max-width: 900px;
-  width: 100%;
-  padding: 25px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    max-width: 900px;
+    width: 90%;
+    padding: 25px;
 }
 
 .internship-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
 }
 
 .internship-details {
-  flex: 2;
-  text-align: justify;
+    flex: 2;
+    text-align: justify;
 }
 
 .internship-details .icon {
-  font-size: 40px;
-  color: #4a6cf7;
-  margin-bottom: 10px;
-  margin-left: 250px;
+    font-size: 40px;
+    color: #4a6cf7;
+    margin-bottom: 10px;
+    margin-left: 250px;
 }
 
 .internship-details h3 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .internship-details p {
-  margin: 4px 0;
-  font-size: 14px;
+    margin: 4px 0;
+    font-size: 14px;
 }
 
 .internship-details ul {
-  margin-top: 10px;
-  padding-left: 20px;
-  font-size: 14px;
+    margin-top: 10px;
+    padding-left: 20px;
+    font-size: 14px;
 }
 
 .internship-details ul li {
-  margin-bottom: 6px;
+    margin-bottom: 6px;
 }
 
 .summary {
-  font-style: italic;
-  margin-top: 10px;
-  color: #444;
+    font-style: italic;
+    margin-top: 10px;
+    color: #444;
 }
 
 .internship-image {
-  flex-shrink: 0;
-  flex: 1;
-  max-width: 250px;
-  max-height: 400px;
-  margin: 20px 10px 20px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    flex-shrink: 0;
+    flex: 1;
+    max-width: 250px;
+    max-height: 400px;
+    margin: 20px 10px 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .internship-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  padding: 4px;
-  object-fit: contain;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 4px;
+    object-fit: contain;
 }
 
 /* Project Section */
@@ -533,6 +565,57 @@ nav ul li a:hover {
     font-size: 14px;
 }
 
+/* Upcoming Projects Section */
+
+.upcomming-project-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 5px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scroll-padding: 10px;
+}
+
+.upcomming-project-cards {
+    flex: 0 0 40%;
+    min-width: 280px;
+    scroll-snap-align: start;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px 20px;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+.upcomming-project-cards:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.upcomming-project-cards i {
+    font-size: 40px;
+    color: #4a6cf7;
+    margin-bottom: 15px;
+}
+
+.upcomming-project-cards h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.upcomming-project-cards p {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
 /* Certificate Section */
 
 .certificates-scroll-container {
@@ -547,7 +630,7 @@ nav ul li a:hover {
 }
 
 .project {
-    flex: 0 0 370px; 
+    flex: 0 0 370px;
     scroll-snap-align: start;
     background: #fff;
     border-radius: 10px;
@@ -604,18 +687,17 @@ nav ul li a:hover {
 }
 
 .resume-preview {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .resume-image {
-  width: 70%;
-  max-width: 900px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-
 
 /* Contact Section */
 
@@ -694,156 +776,225 @@ footer {
 
 /* Responsive Design */
 
+@media (max-width: 1024px) {
+    .project {
+        flex: 0 0 45%;
+    }
+    
+    .project-cards {
+        flex: 0 0 45%;
+    }
+    
+    .internship-container {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
 @media (max-width: 768px) {
+    /* Header and Navigation */
     #header .container {
-        flex-direction: column;
-        text-align: center;
+        padding: 0 20px;
     }
-
+    
     nav ul {
-        margin-top: 20px;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: linear-gradient(to bottom, #6a11cb 0%, #2595fc 100%);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 80px;
+        transition: right 0.3s ease;
+        z-index: 1000;
     }
-
+    
+    nav ul.active {
+        right: 0;
+    }
+    
     nav ul li {
-        margin: 0 15px;
+        margin: 15px 0;
     }
-
-    .about-content {
-        flex-direction: column;
+    
+    .hamburger {
+        display: flex;
     }
-
-    .contact-container {
-        flex-direction: column;
-    }
-
+    
+    /* Hero Section */
     #hero h2 {
         font-size: 2.5rem;
     }
-
+    
     #hero p {
         font-size: 1.2rem;
     }
-
+    
+    /* About Section */
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-img {
+        width: 300px;
+        height: 300px;
+    }
+    
+    /* Education Section */
+    .education-cards {
+        flex: 0 0 80%;
+    }
+    
+    /* Skills Section */
+    .skills-container {
+        grid-auto-columns: 280px;
+        height: 500px;
+    }
+    
+    /* Internship Section */
+    .internship-container {
+        width: 95%;
+    }
+    
+    .internship-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .internship-image {
+        max-width: 45%;
+    }
+    
+    .internship-details .icon {
+        margin-left: 0;
+    }
+    
+    /* Project Section */
+    .project-cards {
+        flex: 0 0 80%;
+    }
+    
+    .project-cards h3 {
+        font-size: 18px;
+    }
+    
+    .project-cards h4,
+    .project-cards p,
+    .project-cards ol {
+        font-size: 13px;
+    }
+    
+    /* Certificate Section */
+    .project {
+        flex: 0 0 80%;
+    }
+    
+    .project-info h3 {
+        font-size: 1.1rem;
+    }
+    
+    .project img {
+        height: 180px;
+    }
+    
+    /* Contact Section */
+    .contact-container {
+        flex-direction: column;
+    }
+    
     .section-title {
         font-size: 2rem;
     }
 }
 
 @media (max-width: 480px) {
+    /* Header and Navigation */
     nav ul {
-        flex-direction: column;
-        align-items: center;
+        width: 85%;
     }
-
-    nav ul li {
-        margin: 10px 0;
+    
+    .logo h1 {
+        font-size: 1.5rem;
     }
-
-    .projects-container {
-        grid-template-columns: 1fr;
+    
+    .tagline {
+        font-size: 0.8rem;
     }
-
-    .project-links {
-        flex-direction: column;
+    
+    /* Hero Section */
+    #hero h2 {
+        font-size: 2rem;
     }
-}
-
-@media (max-width: 1024px) {
-    .project {
-        flex: 0 0 45%;
-    }
-}
-
-@media (max-width: 768px) {
-    .project {
-        flex: 0 0 80%;
-    }
-
-    .project-info h3 {
-        font-size: 1.1rem;
-    }
-
-    .project img {
-        height: 180px;
-    }
-}
-
-@media (max-width: 480px) {
-    .project {
-        flex: 0 0 100%;
-    }
-
-    .project-info h3 {
+    
+    #hero p {
         font-size: 1rem;
     }
-
-    .project img {
-        height: 160px;
+    
+    /* About Section */
+    .about-img {
+        width: 250px;
+        height: 250px;
     }
-
-    .project-links .btn {
-        padding: 8px 16px;
-        font-size: 14px;
+    
+    /* Education Section */
+    .education-cards {
+        flex: 0 0 100%;
     }
-}
-
-@media (max-width: 1024px) {
-    .project-cards {
-        flex: 0 0 45%;
+    
+    /* Skills Section */
+    .skills-container {
+        grid-auto-columns: 250px;
+        height: 450px;
     }
-}
-
-@media (max-width: 768px) {
-    .project-cards {
-        flex: 0 0 80%;
+    
+    /* Internship Section */
+    .internship-image {
+        max-width: 70%;
     }
-
-    .project-cards h3 {
-        font-size: 18px;
-    }
-
-    .project-cards h4,
-    .project-cards p,
-    .project-cards ol {
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 480px) {
+    
+    /* Project Section */
     .project-cards {
         flex: 0 0 100%;
     }
-
+    
     .project-cards h3 {
         font-size: 17px;
     }
-
+    
     .project-cards h4,
     .project-cards p,
     .project-cards ol {
         font-size: 12.5px;
     }
-}
-
-@media (max-width: 1200px) {
-  .internship-container {
-    width: 80%;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .internship-container {
-    width: 95%;
-    margin: 0 auto;
-  }
-
-  .internship-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .internship-image {
-    max-width: 45%;
-  }
+    
+    /* Upcoming Projects Section */
+    .upcomming-project-cards {
+        flex: 0 0 100%;
+    }
+    
+    /* Certificate Section */
+    .project {
+        flex: 0 0 100%;
+    }
+    
+    .project-info h3 {
+        font-size: 1rem;
+    }
+    
+    .project img {
+        height: 160px;
+    }
+    
+    .project-links .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    /* Resume Section */
+    .resume-image {
+        width: 90%;
+    }
 }
