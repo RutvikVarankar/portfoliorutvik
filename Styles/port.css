@@ -567,54 +567,69 @@ nav ul li a:hover {
 
 /* Upcoming Projects Section */
 
+/* Upcoming Projects Section */
+#upcomming-project {
+    padding: 60px 0;
+}
+
 .upcomming-project-container {
     display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    padding: 20px 5px;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: thin;
-    scroll-padding: 10px;
+    gap: 30px;
+    padding: 20px 0;
+    width: 100%;
 }
 
 .upcomming-project-cards {
-    flex: 0 0 40%;
-    min-width: 280px;
-    scroll-snap-align: start;
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
     background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: center;
-    padding: 20px 20px;
-    margin: 0;
-    transition: transform 0.3s ease;
+    padding: 30px 25px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #e0e0e0;
 }
 
 .upcomming-project-cards:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .upcomming-project-cards i {
-    font-size: 40px;
-    color: #4a6cf7;
-    margin-bottom: 15px;
+    font-size: 3rem;
+    color: #6a11cb;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .upcomming-project-cards h3 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+    line-height: 1.3;
 }
 
 .upcomming-project-cards p {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-light);
+    line-height: 1.6;
+    font-style: italic;
+    margin: 0;
 }
+
 
 /* Certificate Section */
 
@@ -780,11 +795,11 @@ footer {
     .project {
         flex: 0 0 45%;
     }
-    
+
     .project-cards {
         flex: 0 0 45%;
     }
-    
+
     .internship-container {
         width: 80%;
         margin: 0 auto;
@@ -792,11 +807,12 @@ footer {
 }
 
 @media (max-width: 768px) {
+
     /* Header and Navigation */
     #header .container {
         padding: 0 20px;
     }
-    
+
     nav ul {
         position: fixed;
         top: 0;
@@ -811,188 +827,267 @@ footer {
         transition: right 0.3s ease;
         z-index: 1000;
     }
-    
+
     nav ul.active {
         right: 0;
     }
-    
+
     nav ul li {
         margin: 15px 0;
     }
-    
+
     .hamburger {
         display: flex;
     }
-    
+
     /* Hero Section */
     #hero h2 {
         font-size: 2.5rem;
     }
-    
+
     #hero p {
         font-size: 1.2rem;
     }
-    
+
     /* About Section */
     .about-content {
         flex-direction: column;
     }
-    
+
     .about-img {
         width: 300px;
         height: 300px;
     }
-    
+
     /* Education Section */
     .education-cards {
         flex: 0 0 80%;
     }
-    
+
     /* Skills Section */
     .skills-container {
         grid-auto-columns: 280px;
         height: 500px;
     }
-    
+
     /* Internship Section */
     .internship-container {
         width: 95%;
     }
-    
+
     .internship-content {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .internship-image {
         max-width: 45%;
     }
-    
+
     .internship-details .icon {
         margin-left: 0;
     }
-    
+
     /* Project Section */
     .project-cards {
         flex: 0 0 80%;
     }
-    
+
     .project-cards h3 {
         font-size: 18px;
     }
-    
+
     .project-cards h4,
     .project-cards p,
     .project-cards ol {
         font-size: 13px;
     }
-    
+
     /* Certificate Section */
     .project {
         flex: 0 0 80%;
     }
-    
+
     .project-info h3 {
         font-size: 1.1rem;
     }
-    
+
     .project img {
         height: 180px;
     }
-    
+
     /* Contact Section */
     .contact-container {
         flex-direction: column;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
 }
 
 @media (max-width: 480px) {
+
     /* Header and Navigation */
     nav ul {
         width: 85%;
     }
-    
+
     .logo h1 {
         font-size: 1.5rem;
     }
-    
+
     .tagline {
         font-size: 0.8rem;
     }
-    
+
     /* Hero Section */
     #hero h2 {
         font-size: 2rem;
     }
-    
+
     #hero p {
         font-size: 1rem;
     }
-    
+
     /* About Section */
     .about-img {
         width: 250px;
         height: 250px;
     }
-    
+
     /* Education Section */
     .education-cards {
         flex: 0 0 100%;
     }
-    
+
     /* Skills Section */
     .skills-container {
         grid-auto-columns: 250px;
         height: 450px;
     }
-    
+
     /* Internship Section */
     .internship-image {
         max-width: 70%;
     }
-    
+
     /* Project Section */
     .project-cards {
         flex: 0 0 100%;
     }
-    
+
     .project-cards h3 {
         font-size: 17px;
     }
-    
+
     .project-cards h4,
     .project-cards p,
     .project-cards ol {
         font-size: 12.5px;
     }
-    
+
     /* Upcoming Projects Section */
-    .upcomming-project-cards {
-        flex: 0 0 100%;
+    @media (max-width: 1024px) {
+        .upcomming-project-cards {
+            flex: 0 0 calc(50% - 20px);
+            padding: 25px 20px;
+        }
     }
-    
+
+    @media (max-width: 768px) {
+        .upcomming-project-container {
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .upcomming-project-cards {
+            flex: 0 0 100%;
+            max-width: 400px;
+            width: 100%;
+            padding: 25px 20px;
+        }
+
+        .upcomming-project-cards i {
+            font-size: 42px;
+            margin-bottom: 18px;
+        }
+
+        .upcomming-project-cards h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .upcomming-project-cards p {
+            font-size: 15px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .upcomming-project-container {
+            gap: 20px;
+            padding: 15px 0;
+        }
+
+        .upcomming-project-cards {
+            padding: 20px 15px;
+            min-width: 200px;
+        }
+
+        .upcomming-project-cards i {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .upcomming-project-cards h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .upcomming-project-cards p {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+    }
+
+    @media (max-width: 360px) {
+        .upcomming-project-cards {
+            flex: 0 0 100%;
+            padding: 18px 12px;
+        }
+
+        .upcomming-project-cards i {
+            font-size: 36px;
+        }
+
+        .upcomming-project-cards h3 {
+            font-size: 17px;
+        }
+
+        .upcomming-project-cards p {
+            font-size: 13px;
+        }
+    }
+
     /* Certificate Section */
     .project {
         flex: 0 0 100%;
     }
-    
+
     .project-info h3 {
         font-size: 1rem;
     }
-    
+
     .project img {
         height: 160px;
     }
-    
+
     .project-links .btn {
         padding: 8px 16px;
         font-size: 14px;
     }
-    
+
     /* Resume Section */
     .resume-image {
         width: 90%;
