@@ -758,27 +758,6 @@ nav ul li a:hover {
     color: var(--primary-color);
 }
 
-.contact-form {
-    flex: 1;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 1rem;
-}
-
-.form-group textarea {
-    resize: vertical;
-}
 
 /* Footer */
 
