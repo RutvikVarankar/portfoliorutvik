@@ -55,7 +55,6 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            height: 150%;
         }
 
         .section {
@@ -216,13 +215,15 @@
             width: 100%;
         }
 
-        /* Hamburger Menu */
+        /* Hamburger Menu - FIXED */
         .hamburger {
             display: none;
+            /* Hidden by default */
             flex-direction: column;
             cursor: pointer;
             gap: 5px;
             z-index: 1001;
+            padding: 5px;
         }
 
         .hamburger span {
@@ -235,7 +236,7 @@
 
         /* When menu is open, animate icon into an "X" */
         .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
+            transform: rotate(45deg) translate(6px, 6px);
         }
 
         .hamburger.active span:nth-child(2) {
@@ -246,7 +247,7 @@
             transform: rotate(-45deg) translate(6px, -6px);
         }
 
-        /* Desktop Navigation */
+        /* Desktop Navigation - Show by default */
         .desktop-nav {
             display: block;
         }
@@ -260,7 +261,7 @@
             height: 100vh;
             background: white;
             box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-            padding: 80px 20px 20px;
+            padding: 100px 20px 20px;
             transition: right 0.3s ease;
             z-index: 1000;
             overflow-y: auto;
@@ -274,7 +275,7 @@
             display: flex;
             flex-direction: column;
             list-style: none;
-            gap: 15px;
+            gap: 10px;
         }
 
         .mobile-nav ul li {
@@ -283,17 +284,20 @@
 
         .mobile-nav ul li a {
             display: block;
-            padding: 12px 15px;
+            padding: 15px 20px;
             text-decoration: none;
             color: var(--dark-color);
             font-weight: 500;
             border-radius: 8px;
             transition: all 0.3s ease;
+            font-size: 1.1rem;
+            border: 1px solid #f0f0f0;
         }
 
         .mobile-nav ul li a:hover {
             background: rgba(52, 152, 219, 0.1);
             color: var(--primary-color);
+            transform: translateX(5px);
         }
 
         /* Overlay for when menu is open */
@@ -317,13 +321,14 @@
 
         /* Hero Section */
         #hero {
-            height: 100vh;
+            min-height: 100vh;
+            height: auto;
             color: var(--dark-color);
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
-            padding-top: 100px;
+            padding: 120px 0 80px;
         }
 
         .hero-background {
@@ -342,7 +347,6 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-
         }
 
         .shape {
@@ -498,7 +502,6 @@
             transition: transform 0.5s ease;
             filter: brightness(1.05) contrast(1.05) saturate(1.1);
             border-radius: 30px;
-            /* Added to ensure corners are rounded */
         }
 
         .image-frame:hover .profile-image {
@@ -541,7 +544,7 @@
             color: var(--primary-color);
         }
 
-        /* Education Section - FIXED */
+        /* Education Section */
         .education-container {
             display: flex;
             justify-content: center;
@@ -564,7 +567,6 @@
             box-shadow: var(--shadow-heavy);
         }
 
-        /* Updated Education Icon Styling - Consistent with other sections */
         .education-icon {
             width: 80px;
             height: 80px;
@@ -682,7 +684,7 @@
             margin: 0 10px;
         }
 
-        /* Internship Section - FIXED */
+        /* Internship Section */
         .internship-container {
             display: flex;
             flex-direction: column;
@@ -718,7 +720,6 @@
             text-align: left;
         }
 
-        /* Updated Internship Icon Styling - Consistent with other sections */
         .internship-icon {
             width: 80px;
             height: 80px;
@@ -902,7 +903,7 @@
             left: -15px;
         }
 
-        /* Upcoming Projects Section - FIXED */
+        /* Upcoming Projects Section */
         .upcoming-project-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -929,7 +930,6 @@
             box-shadow: var(--shadow-heavy);
         }
 
-        /* Updated Icon Styling - Consistent with other sections */
         .upcoming-project-icon {
             width: 80px;
             height: 80px;
@@ -1253,7 +1253,7 @@
             box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3);
         }
 
-        /* Responsive Design - IMPROVED */
+        /* Responsive Design - HAMBURGER FIXED */
         @media (max-width: 1200px) {
             .hero-text h2 {
                 font-size: 3rem;
@@ -1263,12 +1263,18 @@
                 width: 350px;
                 height: 350px;
             }
+
+            .image-frame {
+                width: 380px;
+                height: 380px;
+            }
         }
 
         @media (max-width: 992px) {
             .hero-content {
                 flex-direction: column;
                 text-align: center;
+                gap: 40px;
             }
 
             .hero-text {
@@ -1281,10 +1287,22 @@
 
             .about-content {
                 flex-direction: column;
+                gap: 40px;
+            }
+
+            .image-container {
+                width: 320px;
+                height: 320px;
+            }
+
+            .image-frame {
+                width: 320px;
+                height: 320px;
             }
 
             .contact-container {
                 grid-template-columns: 1fr;
+                gap: 40px;
             }
 
             .internship-content {
@@ -1296,12 +1314,17 @@
                 margin-top: 20px;
             }
 
+            /* HAMBURGER MENU - SHOW ON MOBILE */
             .desktop-nav {
-                display: none;
+                display: none !important;
             }
 
             .hamburger {
-                display: flex;
+                display: flex !important;
+            }
+
+            #hero {
+                padding: 100px 0 60px;
             }
         }
 
@@ -1320,13 +1343,13 @@
             }
 
             .image-container {
-                width: 300px;
-                height: 300px;
+                width: 280px;
+                height: 280px;
             }
 
             .image-frame {
-                width: 300px;
-                height: 300px;
+                width: 280px;
+                height: 280px;
             }
 
             .project-container,
@@ -1356,11 +1379,24 @@
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
+                gap: 15px;
             }
 
             .hero-buttons .btn {
                 width: 100%;
                 max-width: 250px;
+            }
+
+            #hero {
+                padding: 90px 0 50px;
+            }
+
+            .hero-text p {
+                font-size: 1.1rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem !important;
             }
         }
 
@@ -1381,10 +1417,17 @@
 
             .hero-text h2 {
                 font-size: 2rem;
+                line-height: 1.3;
             }
 
             .hero-text p {
-                font-size: 1.1rem;
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem !important;
+                margin-bottom: 25px !important;
             }
 
             .hero-buttons {
@@ -1437,9 +1480,34 @@
                 height: 40px;
                 font-size: 16px;
             }
+
+            #hero {
+                padding: 80px 0 40px;
+                min-height: auto;
+            }
+
+            .hero-content {
+                gap: 30px;
+            }
+
+            /* Mobile Navigation Improvements */
+            .mobile-nav {
+                width: 250px;
+                padding: 90px 15px 20px;
+            }
+
+            .mobile-nav ul li a {
+                padding: 12px 15px;
+                font-size: 1rem;
+            }
         }
 
         @media (max-width: 400px) {
+            .container {
+                width: 100%;
+                height: auto padding: 0 10px;
+            }
+
             .image-container {
                 width: 220px;
                 height: 220px;
@@ -1461,6 +1529,23 @@
             .upcoming-project-container {
                 grid-template-columns: 1fr;
             }
+
+            .hero-text p {
+                font-size: 0.95rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem !important;
+            }
+
+            #hero {
+                padding: 70px 0 30px;
+            }
+
+            /* Smaller mobile nav for very small screens */
+            .mobile-nav {
+                width: 220px;
+            }
         }
     </style>
 </head>
@@ -1479,7 +1564,7 @@
                 </div>
             </div>
 
-            <!-- Desktop Navigation (Hidden) -->
+            <!-- Desktop Navigation -->
             <nav class="desktop-nav">
                 <ul id="nav-menu">
                     <li><a href="#about">About</a></li>
@@ -1521,6 +1606,7 @@
         <div class="overlay" id="overlay"></div>
     </header>
 
+    <!-- Rest of your HTML content remains exactly the same -->
     <!-- Hero Section -->
     <section id="hero">
         <div class="hero-background">
@@ -1583,7 +1669,7 @@
         </div>
     </section>
 
-    <!-- Education Section - FIXED -->
+    <!-- Education Section -->
     <section id="Education" class="section">
         <div class="container">
             <h2 class="section-title">Education</h2>
@@ -1699,85 +1785,83 @@
         </div>
     </section>
 
-    <!-- Internship Section - FIXED -->
+    <!-- Internship Section -->
     <section id="internship" class="section">
         <div class="container">
             <h2 class="section-title">Internships</h2>
             <div class="internship-container">
-                <div class="internship-card">
-                    <div class="internship-content">
-                        <div class="internship-details">
-                            <div class="internship-icon">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <h3>Machine Learning Internship @ CODTECH IT SOLUTIONS</h3>
-                            <p><strong>Duration:</strong> May 5, 2025 – August 5, 2025</p>
-                            <p><strong>Mode:</strong> Online (12 Weeks)</p>
-                            <p><strong>Role:</strong> Machine Learning Intern</p>
-                            <p><strong>Company:</strong> CODTECH IT SOLUTIONS PVT. LTD.</p>
-                            <ul>
-                                <li><strong>Decision Tree Classification</strong> – Visualized and interpreted decision
-                                    paths using Scikit-learn.</li>
-                                <li><strong>Sentiment Analysis</strong> – Applied TF-IDF and Logistic Regression on
-                                    customer
-                                    review datasets.</li>
-                                <li><strong>Image Classification</strong> – Built a CNN model with TensorFlow for
-                                    multi-class image recognition.</li>
-                                <li><strong>Recommendation System</strong> – Designed collaborative filtering based
-                                    systems
-                                    with performance evaluation.</li>
-                            </ul>
-                            <p class="summary">Gained practical experience in machine learning pipelines, model
-                                evaluation,
-                                and deployment best practices.</p>
-                        </div>
-                        <div class="internship-image">
-                            <img src="assets/CODTECH INTERNSHIP CERTIFICATE.jpg" alt="Internship Image" />
-                        </div>
+                <div class="internship-details">
+                    <div class="internship-icon">
+                        <i class="fas fa-briefcase"></i>
                     </div>
+                    <h3>Machine Learning Internship @ CODTECH IT SOLUTIONS</h3>
+                    <p><strong>Duration:</strong> May 5, 2025 – August 5, 2025</p>
+                    <p><strong>Mode:</strong> Online (12 Weeks)</p>
+                    <p><strong>Role:</strong> Machine Learning Intern</p>
+                    <p><strong>Company:</strong> CODTECH IT SOLUTIONS PVT. LTD.</p>
+                    <ul>
+                        <li><strong>Decision Tree Classification</strong> – Visualized and interpreted decision
+                            paths using Scikit-learn.</li>
+                        <li><strong>Sentiment Analysis</strong> – Applied TF-IDF and Logistic Regression on
+                            customer
+                            review datasets.</li>
+                        <li><strong>Image Classification</strong> – Built a CNN model with TensorFlow for
+                            multi-class image recognition.</li>
+                        <li><strong>Recommendation System</strong> – Designed collaborative filtering based
+                            systems
+                            with performance evaluation.</li>
+                    </ul>
+                    <p class="summary">Gained practical experience in machine learning pipelines, model
+                        evaluation,
+                        and deployment best practices.</p>
                 </div>
-
-                <div class="internship-card">
-                    <div class="internship-content">
-                        <div class="internship-details">
-                            <div class="internship-icon">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <h3>Machine Learning Internship @ CODSOFT PVT. LTD.</h3>
-                            <p><strong>Duration:</strong> July 10, 2025 – August 10, 2025</p>
-                            <p><strong>Mode:</strong> Online (4 Weeks)</p>
-                            <p><strong>Role:</strong> Machine Learning Intern</p>
-                            <p><strong>Company:</strong> CODSOFT PVT. LTD.</p>
-                            <ul>
-                                <li><strong>Movie Genre Classification</strong> – Built a text classification model
-                                    using
-                                    TF-IDF with Naive Bayes and Logistic Regression to predict genres from plot
-                                    summaries.
-                                </li>
-                                <li><strong>Credit Card Fraud Detection</strong> – Developed a binary classifier using
-                                    Decision Tree, Logistic Regression, and Random Forest to detect fraud in imbalanced
-                                    data.</li>
-                                <li><strong>Customer Churn Prediction</strong> – Predicted customer attrition using
-                                    behavioral data and models like Random Forest and Gradient Boosting.</li>
-                                <li><strong>Spam SMS Detection</strong> – Created a spam filter using TF-IDF with Naive
-                                    Bayes and SVM to classify messages as spam or not.</li>
-                                <li><strong>Handwritten Text Generation</strong> – Used a character-level LSTM model
-                                    trained
-                                    on handwriting data to generate realistic text sequences.</li>
-                            </ul>
-                            <p class="summary">Gained hands-on experience in building ML pipelines, covering data prep,
-                                model training, evaluation, and sequence modeling with RNNs.</p>
-                        </div>
-                        <div class="internship-image">
-                            <img src="assets/CODSOFT INTERNSHIP CERTIFICATE.jpg" alt="Internship Image" />
-                        </div>
-                    </div>
+                <div class="internship-image">
+                    <img src="assets/CODTECH INTERNSHIP CERTIFICATE.jpg" alt="Internship Image" />
                 </div>
             </div>
         </div>
+
+        <div class="internship-card">
+            <div class="internship-content">
+                <div class="internship-details">
+                    <div class="internship-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Machine Learning Internship @ CODSOFT PVT. LTD.</h3>
+                    <p><strong>Duration:</strong> July 10, 2025 – August 10, 2025</p>
+                    <p><strong>Mode:</strong> Online (4 Weeks)</p>
+                    <p><strong>Role:</strong> Machine Learning Intern</p>
+                    <p><strong>Company:</strong> CODSOFT PVT. LTD.</p>
+                    <ul>
+                        <li><strong>Movie Genre Classification</strong> – Built a text classification model
+                            using
+                            TF-IDF with Naive Bayes and Logistic Regression to predict genres from plot
+                            summaries.
+                        </li>
+                        <li><strong>Credit Card Fraud Detection</strong> – Developed a binary classifier using
+                            Decision Tree, Logistic Regression, and Random Forest to detect fraud in imbalanced
+                            data.</li>
+                        <li><strong>Customer Churn Prediction</strong> – Predicted customer attrition using
+                            behavioral data and models like Random Forest and Gradient Boosting.</li>
+                        <li><strong>Spam SMS Detection</strong> – Created a spam filter using TF-IDF with Naive
+                            Bayes and SVM to classify messages as spam or not.</li>
+                        <li><strong>Handwritten Text Generation</strong> – Used a character-level LSTM model
+                            trained
+                            on handwriting data to generate realistic text sequences.</li>
+                    </ul>
+                    <p class="summary">Gained hands-on experience in building ML pipelines, covering data prep,
+                        model training, evaluation, and sequence modeling with RNNs.</p>
+                </div>
+                <div class="internship-image">
+                    <img src="assets/CODSOFT INTERNSHIP CERTIFICATE.jpg" alt="Internship Image" />
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
     </section>
 
-    <!-- Project Section-->
+    <!-- Project Section -->
     <section id="project" class="section">
         <div class="container">
             <h2 class="section-title">Projects</h2>
@@ -1830,7 +1914,7 @@
         </div>
     </section>
 
-    <!-- Upcoming Projects Section - FIXED -->
+    <!-- Upcoming Projects Section -->
     <section id="upcoming-project" class="section">
         <div class="container">
             <h2 class="section-title">Upcoming Projects</h2>
@@ -1994,32 +2078,47 @@
             }
         });
 
-        // Mobile menu toggle
+        // Mobile menu toggle - FIXED
         const hamburger = document.getElementById('hamburger');
         const mobileNav = document.getElementById('mobileNav');
         const overlay = document.getElementById('overlay');
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-            overlay.classList.toggle('active');
-        });
+        if (hamburger && mobileNav && overlay) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+            });
 
-        // Close menu when clicking on overlay
-        overlay.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            mobileNav.classList.remove('active');
-            overlay.classList.remove('active');
-        });
-
-        // Close menu when clicking on a link
-        document.querySelectorAll('#mobileNav a').forEach(link => {
-            link.addEventListener('click', () => {
+            // Close menu when clicking on overlay
+            overlay.addEventListener('click', () => {
                 hamburger.classList.remove('active');
                 mobileNav.classList.remove('active');
                 overlay.classList.remove('active');
+                document.body.style.overflow = '';
             });
-        });
+
+            // Close menu when clicking on a link
+            document.querySelectorAll('#mobileNav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // Close menu when pressing Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
