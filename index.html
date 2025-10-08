@@ -217,7 +217,7 @@
 
         /* Hamburger Menu */
         .hamburger {
-            display: flex;
+            display: none;
             flex-direction: column;
             cursor: pointer;
             gap: 5px;
@@ -243,6 +243,11 @@
 
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Desktop Navigation */
+        .desktop-nav {
+            display: block;
         }
 
         /* Mobile Navigation Menu */
@@ -307,11 +312,6 @@
         .overlay.active {
             opacity: 1;
             visibility: visible;
-        }
-
-        /* Hide desktop navigation on all screen sizes */
-        .desktop-nav {
-            display: none;
         }
 
         /* Hero Section */
@@ -496,6 +496,7 @@
             object-fit: cover;
             transition: transform 0.5s ease;
             filter: brightness(1.05) contrast(1.05) saturate(1.1);
+            border-radius: 30px; /* Added to ensure corners are rounded */
         }
 
         .image-frame:hover .profile-image {
@@ -1004,6 +1005,7 @@
             aspect-ratio: 3/2;
             object-fit: cover;
             transition: transform 0.3s ease;
+            border-radius: 10px;
         }
 
         .project:hover img {
@@ -1249,7 +1251,7 @@
             box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3);
         }
 
-        /* Responsive Design */
+        /* Responsive Design - IMPROVED */
         @media (max-width: 1200px) {
             .hero-text h2 {
                 font-size: 3rem;
@@ -1291,6 +1293,14 @@
                 max-width: 100%;
                 margin-top: 20px;
             }
+
+            .desktop-nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1300,6 +1310,7 @@
 
             .section-title {
                 font-size: 2rem;
+                margin-bottom: 40px;
             }
 
             .hero-text h2 {
@@ -1329,6 +1340,26 @@
             .contact-buttons {
                 flex-direction: column;
             }
+
+            .contact-btn {
+                width: 100%;
+            }
+
+            .education-cards,
+            .internship-card,
+            .about-cards {
+                padding: 25px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 250px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1343,6 +1374,7 @@
 
             .section-title {
                 font-size: 1.8rem;
+                margin-bottom: 30px;
             }
 
             .hero-text h2 {
@@ -1375,10 +1407,61 @@
             .skills-container {
                 grid-template-columns: 1fr;
             }
+
+            .education-cards,
+            .internship-card,
+            .about-cards {
+                padding: 20px;
+            }
+
+            .contact-info {
+                padding: 20px;
+            }
+
+            .contact-buttons {
+                gap: 15px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+
+            .circle {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .image-container {
+                width: 220px;
+                height: 220px;
+            }
+
+            .image-frame {
+                width: 220px;
+                height: 220px;
+            }
+
+            .hero-text h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .upcoming-project-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-
 <body>
     <!-- Header Section -->
     <header id="header">
