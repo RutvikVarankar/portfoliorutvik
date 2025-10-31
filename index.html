@@ -6,17 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rutvik Varankar | Portfolio</title>
     <meta name="description" content="Portfolio of Rutvik Varankar. Projects, skills, and contact information." />
+    <meta name="keywords" content="Rutvik Varankar, Portfolio, Machine Learning, Data Science, Full Stack Developer" />
+    <meta name="author" content="Rutvik Varankar" />
     <link rel="canonical" href="https://rutvikvarankar.netlify.app/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="Styles/port.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1B1t8nVKKb1pZ9YbV+f+Y1T9C1sSlPZt5YvJ5qVj1xkI1PZsM2xYhm7k1y5A+4l5cA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
 </head>
 
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="loading-circle">RV</div>
+            </div>
+            <div class="loading-text">
+                <h3>Rutvik Varankar</h3>
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- Header Section -->
     <header id="header">
         <div class="container">
@@ -30,7 +57,7 @@
                 </div>
             </div>
 
-            <!-- Hamburger Menu - ALWAYS VISIBLE -->
+            <!-- Hamburger Menu -->
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
@@ -40,6 +67,12 @@
 
         <!-- Mobile Navigation Menu -->
         <nav class="mobile-nav" id="mobileNav">
+            <div class="nav-header">
+                <div class="nav-logo">
+                    <div class="circle">RV</div>
+                    <span>Rutvik Varankar</span>
+                </div>
+            </div>
             <ul>
                 <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
                 <li><a href="#Education"><i class="fas fa-graduation-cap"></i> Education</a></li>
@@ -65,55 +98,121 @@
                 <div class="shape shape-2"></div>
                 <div class="shape shape-3"></div>
                 <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+                <div class="shape shape-6"></div>
             </div>
+            <div class="hero-particles" id="heroParticles"></div>
         </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
                     <h2>Hello, I'm <span class="name"><span class="highlight">Rutvik Varankar</span></span></h2>
-                    <p><b>Student at D.Y. Patil Deemend to be a University Navi Mumbai, School of Humanity and
-                            Sciences</b></p>
-                    <p class="hero-subtitle">Passionate about Machine Learning, Data Science & Full Stack Development
-                    </p>
+                    <div class="typing-container">
+                        <p class="hero-subtitle">Passionate about <span class="typed-text" id="typedText"></span><span class="cursor">|</span></p>
+                    </div>
+                    <p><b>Student at D.Y. Patil Deemend to be a University Navi Mumbai, School of Humanity and Sciences</b></p>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn">Get In Touch</a>
-                        <a href="#project" class="btn" style="background: transparent; border: 2px solid white;">View My
-                            Work</a>
+                        <a href="#contact" class="btn btn-primary">
+                            <span class="btn-text">Get In Touch</span>
+                            <div class="btn-hover"></div>
+                        </a>
+                        <a href="#project" class="btn btn-secondary">
+                            <span class="btn-text">View My Work</span>
+                            <div class="btn-hover"></div>
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number" data-count="10">03</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="2">02</span>
+                            <span class="stat-label">Internships</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="6">06</span>
+                            <span class="stat-label">Certificates</span>
+                        </div>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="image-container">
+                        <div class="image-glow"></div>
                         <img src="assets/self.jpg" alt="Rutvik Varankar" class="profile-img">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-expand-alt"></i>
+                                <span>View Profile</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floating-elements">
+                        <div class="floating-element element-1">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="floating-element element-2">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="floating-element element-3">
+                            <i class="fas fa-database"></i>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+            <span>Scroll Down</span>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">
+                <span class="title-text">About Me</span>
+                <span class="title-bg">About</span>
+            </h2>
             <div class="about-content">
                 <div class="about-img">
                     <div class="image-frame">
+                        <div class="frame-decoration"></div>
                         <img src="assets/self1.jpg" alt="Profile" class="profile-image">
                     </div>
                 </div>
                 <div class="about-container">
                     <div class="about-cards">
-                        <ul>
-                            <li>I'm an enthusiastic computer science student with a wide range of interests in
-                                technology and programming. I work with tools like Python, NumPy, Pandas, Scikit-learn,
-                                and SQL to build robust data pipelines, develop predictive models, and drive
-                                data-informed strategies.</li><br>
-                            <li>From exploratory data analysis to deploying machine learning models, I enjoy solving
-                                complex problems at the intersection of data and impact. I'm especially interested in
-                                statistical modeling, data visualization, and scalable analytics solutions.</li><br>
-                            <li>I enjoy experimenting with Arduino and ESP32 diving deep into the fascinating world of
-                                embedded systems. Through these platforms, I transform innovative ideas into real-world
-                                applications, combining creativity with hands-on technical expertise.</li><br>
-                        </ul>
+                <div class="card-header">
+                    <h3>My Journey</h3>
+                    <div class="header-line"></div>
+                </div>
+                <div class="about-content-text">
+                    <ul>
+                        <li>I'm an enthusiastic computer science student with a wide range of interests in
+                            technology and programming. I work with tools like Python, NumPy, Pandas, Scikit-learn,
+                            and SQL to build robust data pipelines, develop predictive models, and drive
+                            data-informed strategies.</li>
+                        <li>From exploratory data analysis to deploying machine learning models, I enjoy solving
+                            complex problems at the intersection of data and impact. I'm especially interested in
+                            statistical modeling, data visualization, and scalable analytics solutions.</li>
+                        <li>I enjoy experimenting with Arduino and ESP32 diving deep into the fascinating world of
+                            embedded systems. Through these platforms, I transform innovative ideas into real-world
+                            applications, combining creativity with hands-on technical expertise.</li>
+                    </ul>
+                </div>
+                <div class="about-features">
+                    <div class="feature">
+                        <i class="fas fa-bullseye"></i>
+                        <span>Problem Solver</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Innovative Thinker</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-rocket"></i>
+                        <span>Quick Learner</span>
                     </div>
                 </div>
             </div>
@@ -123,21 +222,52 @@
     <!-- Education Section -->
     <section id="Education" class="section">
         <div class="container">
-            <h2 class="section-title">Education</h2>
+            <h2 class="section-title">
+                <span class="title-text">Education</span>
+                <span class="title-bg">Education</span>
+            </h2>
             <div class="education-container">
                 <div class="education-cards">
-                    <div class="education-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                    <div class="education-header">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Academic Qualifications</h3>
                     </div>
-                    <h3>Qualification</h3>
-                    <ul>
-                        <li>Currently pursuing: Masters of Computer Application (MCA)<br><b>From D.Y. Patil University,
-                                Navi Mumbai</b></li><br>
-                        <li>Graduation: BSc in Information Technology (BScIT) : 8.55 CGPA<br><b>From Mumbai
-                                University</b></li><br>
-                        <li>HSC : 62.83 Percentage<br><b>Maharashtra Board</b></li><br>
-                        <li>SSC : 87.60 Percentage<br><b>Maharashtra Board</b></li>
-                    </ul>
+                    <div class="education-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Masters of Computer Application (MCA)</h4>
+                                <p class="timeline-date">Currently pursuing</p>
+                                <p class="timeline-location">D.Y. Patil University, Navi Mumbai</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>BSc in Information Technology (BScIT)</h4>
+                                <p class="timeline-date">Graduated - 8.55 CGPA</p>
+                                <p class="timeline-location">Mumbai University</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>HSC - 12th Grade</h4>
+                                <p class="timeline-date">62.83%</p>
+                                <p class="timeline-location">Maharashtra Board</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>SSC - 10th Grade</h4>
+                                <p class="timeline-date">87.60%</p>
+                                <p class="timeline-location">Maharashtra Board</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -146,91 +276,177 @@
     <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title">Skills</h2>
+            <h2 class="section-title">
+                <span class="title-text">Skills</span>
+                <span class="title-bg">Skills</span>
+            </h2>
             <div class="skills-container">
-                <div class="skill">
-                    <div class="skill-icon">
-                        <i class="fab fa-html5"></i>
+                <div class="skill-category">
+                    <h3 class="category-title">Frontend Development</h3>
+                    <div class="skills-grid">
+                        <div class="skill">
+                            <div class="skill-icon">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <h3>HTML5</h3>
+                            <p>Semantic markup, accessibility, SEO optimization</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-icon">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <h3>CSS3</h3>
+                            <p>Flexbox, Grid, animations, responsive design</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-icon">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <h3>JavaScript</h3>
+                            <p>ES6+, DOM manipulation, async programming</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-icon">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <h3>React</h3>
+                            <p>Component-based UI, hookups, state management</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                        <div class="skill-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <h3>Tailwind CSS</h3>
+                        <p>Utility-first styling, responsive layouts, rapid prototyping</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-icon">
+                                <i class="fab fa-vuejs"></i>
+                            </div>
+                            <h3>Vue.js</h3>
+                            <p>Reactive data binding, component-driven architecture</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>HTML5</h3>
-                    <p>Semantic markup, accessibility, SEO optimization</p>
                 </div>
-                <div class="skill">
-                    <div class="skill-icon">
-                        <i class="fab fa-css3-alt"></i>
+
+                <div class="skill-category">
+                    <h3 class="category-title">Programming Languages</h3>
+                    <div class="skills-grid">
+                        <div class="skill">
+                            <div class="skill-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <h3>Python</h3>
+                            <p>Scripting, automation, data handling</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-icon">
+                                <i class="fab fa-java"></i>
+                            </div>
+                            <h3>Java</h3>
+                            <p>REST APIs, backend development, authentication</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="82"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-icon">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <h3>C</h3>
+                            <p>Procedural programming, low-level logic, memory management</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3>C++</h3>
+                            <p>Performance optimization, object-oriented design, system programming</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="78"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <h3>C#</h3>
+                            <p>Object-oriented programming, .NET framework, application development</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75"></div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>CSS3</h3>
-                    <p>Flexbox, Grid, animations, responsive design</p>
                 </div>
-                <div class="skill">
-                    <div class="skill-icon">
-                        <i class="fab fa-js"></i>
+
+                <div class="skill-category">
+                    <h3 class="category-title">Tools & Technologies</h3>
+                    <div class="skills-grid">
+                        <div class="skill">
+                            <div class="skill-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h3>SQL</h3>
+                            <p>Schema design, data queries, CRUD operations</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-icon">
+                                <i class="fab fa-git-alt"></i>
+                            </div>
+                            <h3>Git</h3>
+                            <p>Source tracking, branching, repository management</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <h3>GitHub</h3>
+                            <p>Version control, project collaboration, code hosting</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-icon">
+                                <i class="fab fa-figma"></i>
+                            </div>
+                            <h3>Figma</h3>
+                            <p>UI design, prototyping, collaborative editing</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70"></div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>JavaScript</h3>
-                    <p>ES6+, DOM manipulation, async programming</p>
-                </div>
-                <div class="skill">
-                    <div class="skill-icon">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <h3>Python</h3>
-                    <p>Scripting, automation, data handling</p>
-                </div>
-                <div class="skill">
-                    <div class="skill-icon">
-                        <i class="fab fa-java"></i>
-                    </div>
-                    <h3>Java</h3>
-                    <p>REST APIs, backend development, authentication</p>
-                </div>
-                <div class="skill">
-                    <div class="skill-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>SQL</h3>
-                    <p>Schema design, data queries, CRUD operations</p>
-                </div>
-                <div class="skill">
-                    <div class="skill-icon">
-                        <i class="fas fa-terminal"></i>
-                    </div>
-                    <h3>C</h3>
-                    <p>Procedural programming, low-level logic, memory management</p>
-                </div>
-                <div class="skill">
-                    <div class="skill-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>C++</h3>
-                    <p>Performance optimization, object-oriented design, system programming</p>
-                </div>
-                <div class="skill">
-                    <div class="skill-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <h3>C#</h3>
-                    <p>Object-oriented programming, .NET framework, application development</p>
-                </div>
-                <div class="skill">
-                    <div class="skill-icon">
-                        <i class="fab fa-git-alt"></i>
-                    </div>
-                    <h3>Git</h3>
-                    <p>Source tracking, branching, repository management</p>
-                </div>
-                <div class="skill">
-                    <div class="skill-icon">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <h3>GitHub</h3>
-                    <p>Version control, project collaboration, code hosting</p>
-                </div>
-                <div class="skill">
-                    <div class="skill-icon">
-                        <i class="fab fa-figma"></i>
-                    </div>
-                    <h3>Figma</h3>
-                    <p>UI design, prototyping, collaborative editing</p>
                 </div>
             </div>
         </div>
@@ -239,34 +455,75 @@
     <!-- Internship Section -->
     <section id="internship" class="section">
         <div class="container">
-            <h2 class="section-title">Internships</h2>
+            <h2 class="section-title">
+                <span class="title-text">Internships</span>
+                <span class="title-bg">Internships</span>
+            </h2>
             <div class="internship-container">
                 <div class="internship-card">
                     <div class="internship-content">
                         <div class="internship-details">
-                            <div class="internship-icon">
-                                <i class="fas fa-briefcase"></i>
+                            <div class="company-header">
+                                <div class="company-logo">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div class="company-info">
+                                    <h3>Machine Learning Intern</h3>
+                                    <p class="company-name">CODTECH IT SOLUTIONS</p>
+                                </div>
                             </div>
-                            <h3>Machine Learning Internship @ CODTECH IT SOLUTIONS</h3>
-                            <p><strong>Duration:</strong> May 5, 2025 – August 5, 2025</p>
-                            <p><strong>Mode:</strong> Online (12 Weeks)</p>
-                            <p><strong>Role:</strong> Machine Learning Intern</p>
-                            <p><strong>Company:</strong> CODTECH IT SOLUTIONS PVT. LTD.</p>
-                            <ul>
-                                <li><strong>Decision Tree Classification</strong> – Visualized and interpreted decision
-                                    paths using Scikit-learn.</li>
-                                <li><strong>Sentiment Analysis</strong> – Applied TF-IDF and Logistic Regression on
-                                    customer review datasets.</li>
-                                <li><strong>Image Classification</strong> – Built a CNN model with TensorFlow for
-                                    multi-class image recognition.</li>
-                                <li><strong>Recommendation System</strong> – Designed collaborative filtering based
-                                    systems with performance evaluation.</li>
-                            </ul>
+                            <div class="internship-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>May 5, 2025 – August 5, 2025</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>12 Weeks</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-globe"></i>
+                                    <span>Online</span>
+                                </div>
+                            </div>
+                            <div class="responsibilities">
+                                <h4>Key Responsibilities & Achievements</h4>
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <strong>Decision Tree Classification</strong> – Visualized and interpreted decision
+                                        paths using Scikit-learn.
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <strong>Sentiment Analysis</strong> – Applied TF-IDF and Logistic Regression on
+                                        customer review datasets.
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <strong>Image Classification</strong> – Built a CNN model with TensorFlow for
+                                        multi-class image recognition.
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <strong>Recommendation System</strong> – Designed collaborative filtering based
+                                        systems with performance evaluation.
+                                    </li>
+                                </ul>
+                            </div>
                             <p class="summary">Gained practical experience in machine learning pipelines, model
                                 evaluation, and deployment best practices.</p>
                         </div>
                         <div class="internship-image">
-                            <img src="assets/CODTECH INTERNSHIP CERTIFICATE.jpg" alt="Internship Image" />
+                            <div class="certificate-frame">
+                                <img src="assets/CODTECH INTERNSHIP CERTIFICATE.jpg" alt="Internship Certificate" />
+                                <div class="certificate-overlay">
+                                    <button class="view-certificate">
+                                        <i class="fas fa-expand"></i>
+                                        View Certificate
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -274,33 +531,72 @@
                 <div class="internship-card">
                     <div class="internship-content">
                         <div class="internship-details">
-                            <div class="internship-icon">
-                                <i class="fas fa-briefcase"></i>
+                            <div class="company-header">
+                                <div class="company-logo">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div class="company-info">
+                                    <h3>Machine Learning Intern</h3>
+                                    <p class="company-name">CODSOFT PVT. LTD.</p>
+                                </div>
                             </div>
-                            <h3>Machine Learning Internship @ CODSOFT PVT. LTD.</h3>
-                            <p><strong>Duration:</strong> July 10, 2025 – August 10, 2025</p>
-                            <p><strong>Mode:</strong> Online (4 Weeks)</p>
-                            <p><strong>Role:</strong> Machine Learning Intern</p>
-                            <p><strong>Company:</strong> CODSOFT PVT. LTD.</p>
-                            <ul>
-                                <li><strong>Movie Genre Classification</strong> – Built a text classification model
-                                    using TF-IDF with Naive Bayes and Logistic Regression to predict genres from plot
-                                    summaries.</li>
-                                <li><strong>Credit Card Fraud Detection</strong> – Developed a binary classifier using
-                                    Decision Tree, Logistic Regression, and Random Forest to detect fraud in imbalanced
-                                    data.</li>
-                                <li><strong>Customer Churn Prediction</strong> – Predicted customer attrition using
-                                    behavioral data and models like Random Forest and Gradient Boosting.</li>
-                                <li><strong>Spam SMS Detection</strong> – Created a spam filter using TF-IDF with Naive
-                                    Bayes and SVM to classify messages as spam or not.</li>
-                                <li><strong>Handwritten Text Generation</strong> – Used a character-level LSTM model
-                                    trained on handwriting data to generate realistic text sequences.</li>
-                            </ul>
+                            <div class="internship-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>July 10, 2025 – August 10, 2025</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>4 Weeks</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-globe"></i>
+                                    <span>Online</span>
+                                </div>
+                            </div>
+                            <div class="responsibilities">
+                                <h4>Key Responsibilities & Achievements</h4>
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <strong>Movie Genre Classification</strong> – Built a text classification model
+                                        using TF-IDF with Naive Bayes and Logistic Regression.
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <strong>Credit Card Fraud Detection</strong> – Developed a binary classifier using
+                                        Decision Tree, Logistic Regression, and Random Forest.
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <strong>Customer Churn Prediction</strong> – Predicted customer attrition using
+                                        behavioral data and models like Random Forest and Gradient Boosting.
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <strong>Spam SMS Detection</strong> – Created a spam filter using TF-IDF with Naive
+                                        Bayes and SVM to classify messages.
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <strong>Handwritten Text Generation</strong> – Used a character-level LSTM model
+                                        trained on handwriting data to generate realistic text sequences.
+                                    </li>
+                                </ul>
+                            </div>
                             <p class="summary">Gained hands-on experience in building ML pipelines, covering data prep,
                                 model training, evaluation, and sequence modeling with RNNs.</p>
                         </div>
                         <div class="internship-image">
-                            <img src="assets/CODSOFT INTERNSHIP CERTIFICATE.jpg" alt="Internship Image" />
+                            <div class="certificate-frame">
+                                <img src="assets/CODSOFT INTERNSHIP CERTIFICATE.jpg" alt="Internship Certificate" />
+                                <div class="certificate-overlay">
+                                    <button class="view-certificate">
+                                        <i class="fas fa-expand"></i>
+                                        View Certificate
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -311,51 +607,90 @@
     <!-- Project Section-->
     <section id="project" class="section">
         <div class="container">
-            <h2 class="section-title">Projects</h2>
+            <h2 class="section-title">
+                <span class="title-text">Projects</span>
+                <span class="title-bg">Projects</span>
+            </h2>
             <div class="project-container">
                 <div class="project-cards">
+                    <div class="project-badge">Web Development</div>
                     <div class="project-icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
                     <h3>My Personal Portfolio Website</h3>
-                    <h4>Duration: May 2025 – Jun 2025</h4>
-                    <p><em>"A fully responsive personal portfolio built to showcase skills, projects, and
+                    <div class="project-meta">
+                        <span class="duration">May 2025 – Jun 2025</span>
+                        <span class="status completed">Completed</span>
+                    </div>
+                    <p class="project-description"><em>"A fully responsive personal portfolio built to showcase skills, projects, and
                             experience"</em></p>
-                    <ol>
-                        <li>Developed using HTML, CSS, and JavaScript with a responsive layout.</li>
-                        <li>Included sections for skills, resume, project highlights, and an interactive contact form.
-                        </li>
-                        <li>Designed with smooth navigation and clean UI for better user experience and accessibility.
-                        </li>
-                    </ol>
+                    <div class="project-features">
+                        <ol>
+                            <li>Developed using HTML, CSS, and JavaScript with a responsive layout.</li>
+                            <li>Included sections for skills, resume, project highlights, and an interactive contact form.
+                            </li>
+                            <li>Designed with smooth navigation and clean UI for better user experience and accessibility.
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Responsive Design</span>
+                    </div>
                 </div>
                 <div class="project-cards">
+                    <div class="project-badge">AI/ML</div>
                     <div class="project-icon">
                         <i class="fas fa-robot"></i>
                     </div>
                     <h3>AudioCompanion – Desktop Voice Assistant</h3>
-                    <h4>Duration: Nov 2024 – Jan 2025</h4>
-                    <p><em>"An AI-powered Python voice assistant with 20+ features for desktop automation"</em></p>
-                    <ol>
-                        <li>Integrated with more than 20+ features.</li>
-                        <li>Integrated speech recognition (Vosk) and text-to-speech (pyttsx3).</li>
-                        <li>Enabled control over apps, YouTube, messaging, alarms, and schedules.</li>
-                        <li>Included focus mode, Google Translate, and password protection.</li>
-                    </ol>
+                    <div class="project-meta">
+                        <span class="duration">Nov 2024 – Jan 2025</span>
+                        <span class="status completed">Completed</span>
+                    </div>
+                    <p class="project-description"><em>"An AI-powered Python voice assistant with 20+ features for desktop automation"</em></p>
+                    <div class="project-features">
+                        <ol>
+                            <li>Integrated with more than 20+ features.</li>
+                            <li>Integrated speech recognition (Vosk) and text-to-speech (pyttsx3).</li>
+                            <li>Enabled control over apps, YouTube, messaging, alarms, and schedules.</li>
+                            <li>Included focus mode, Google Translate, and password protection.</li>
+                        </ol>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Vosk</span>
+                        <span class="tech-tag">pyttsx3</span>
+                        <span class="tech-tag">AI</span>
+                    </div>
                 </div>
                 <div class="project-cards">
+                    <div class="project-badge">Embedded Systems</div>
                     <div class="project-icon">
                         <i class="fas fa-exclamation-circle"></i>
                     </div>
                     <h3>Arduino Based – Drowsiness Alarm System</h3>
-                    <h4>Duration: Dec 2022 – Jan 2023</h4>
-                    <p><em>"Arduino-powered system to detect driver drowsiness and enhance vehicle safety in real
+                    <div class="project-meta">
+                        <span class="duration">Dec 2022 – Jan 2023</span>
+                        <span class="status completed">Completed</span>
+                    </div>
+                    <p class="project-description"><em>"Arduino-powered system to detect driver drowsiness and enhance vehicle safety in real
                             time."</em></p>
-                    <ol>
-                        <li>Used eye-blink detection to trigger alarms and prevent drowsy driving.</li>
-                        <li>Integrated with engine relay for automatic shutdown if unresponsive.</li>
-                        <li>Enhanced with ADAS for increased road safety.</li>
-                    </ol>
+                    <div class="project-features">
+                        <ol>
+                            <li>Used eye-blink detection to trigger alarms and prevent drowsy driving.</li>
+                            <li>Integrated with engine relay for automatic shutdown if unresponsive.</li>
+                            <li>Enhanced with ADAS for increased road safety.</li>
+                        </ol>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Embedded Systems</span>
+                        <span class="tech-tag">IoT</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -364,26 +699,55 @@
     <!-- Upcoming Projects Section -->
     <section id="upcoming-project" class="section">
         <div class="container">
-            <h2 class="section-title">Upcoming Projects</h2>
+            <h2 class="section-title">
+                <span class="title-text">Upcoming Projects</span>
+                <span class="title-bg">Upcoming</span>
+            </h2>
             <div class="upcoming-project-container">
                 <div class="upcoming-project-cards">
+                    <div class="upcoming-badge">In Progress</div>
                     <div class="upcoming-project-icon">
                         <i class="fas fa-robot"></i>
                     </div>
                     <h3>ChatBot for college website</h3>
-                    <p><em>"Automated query system for handling common student inquiries about courses, schedules,
+                    <p class="project-description"><em>"Automated query system for handling common student inquiries about courses, schedules,
                             faculty details, and campus facilities with instant response capabilities. Digital assistant
                             providing students with quick access to academic information, deadline reminders, and campus
                             resources through a conversational interface"</em></p>
+                    <div class="project-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 30%"></div>
+                        </div>
+                        <span class="progress-text">30% Complete</span>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">AI</span>
+                    </div>
                 </div>
                 <div class="upcoming-project-cards">
+                    <div class="upcoming-badge">Planning</div>
                     <div class="upcoming-project-icon">
                         <i class="fas fa-piggy-bank"></i>
                     </div>
                     <h3>Expense Tracker</h3>
-                    <p><em>"Personal finance application for tracking daily expenses, managing budgets and monitoring
+                    <p class="project-description"><em>"Personal finance application for tracking daily expenses, managing budgets and monitoring
                             spending patterns with clear visual reports. Money management tool that helps users record
                             transactions, set savings goals and maintain control over their personal finances"</em></p>
+                    <div class="project-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 15%"></div>
+                        </div>
+                        <span class="progress-text">15% Complete</span>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Chart.js</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -392,66 +756,135 @@
     <!-- Certificate Section -->
     <section id="certificate" class="section">
         <div class="container">
-            <h2 class="section-title">My Certificate</h2>
+            <h2 class="section-title">
+                <span class="title-text">My Certificates</span>
+                <span class="title-bg">Certificates</span>
+            </h2>
             <div class="certificates-scroll-container">
-                <div class="project">
-                    <img src="assets/MachineLearning.jpg" alt="Stanford University — Machine Learning Certificate">
-                    <div class="project-info">
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="assets/MachineLearning.jpg" alt="Stanford University — Machine Learning Certificate">
+                        <div class="certificate-overlay">
+                            <button class="view-btn">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
                         <h3>Stanford University — Machine Learning Certificate</h3>
-                        <div class="project-links">
-                            <a href="assets/MachineLearning.jpg" class="btn">Show Certificate</a>
+                        <p class="certificate-issuer">Stanford University</p>
+                        <div class="certificate-links">
+                            <a href="assets/MachineLearning.jpg" class="btn btn-outline" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Certificate
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="project">
-                    <img src="assets/IBM Certified — Full Stack Software Developer Certificate.jpeg"
-                        alt="IBM Certified — Full Stack Software Developer Certificate">
-                    <div class="project-info">
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="assets/IBM Certified — Full Stack Software Developer Certificate.jpeg"
+                            alt="IBM Certified — Full Stack Software Developer Certificate">
+                        <div class="certificate-overlay">
+                            <button class="view-btn">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
                         <h3>IBM Certified — Full Stack Software Developer Certificate</h3>
-                        <div class="project-links">
+                        <p class="certificate-issuer">IBM</p>
+                        <div class="certificate-links">
                             <a href="assets/IBM Certified — Full Stack Software Developer Certificate.jpeg"
-                                class="btn">Show Certificate</a>
+                                class="btn btn-outline" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Certificate
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="project ">
-                    <img src="assets/TCS ion_page-0001.jpg"
-                        alt="TCS Certified — Career Edge Young professional Certificate">
-                    <div class="project-info">
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="assets/TCS ion_page-0001.jpg"
+                            alt="TCS Certified — Career Edge Young professional Certificate">
+                        <div class="certificate-overlay">
+                            <button class="view-btn">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
                         <h3>TCS Certified — Career Edge Young professional Certificate</h3>
-                        <div class="project-links">
-                            <a href="assets/TCS ion_page-0001.jpg" class="btn">Show Certificate</a>
+                        <p class="certificate-issuer">TCS</p>
+                        <div class="certificate-links">
+                            <a href="assets/TCS ion_page-0001.jpg" class="btn btn-outline" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Certificate
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="project">
-                    <img src="assets/CISCO Certified — Data Analytics Essentials Certificate.jpg"
-                        alt="CISCO Certified — Introduction to Data Science Certificate.jpg">
-                    <div class="project-info">
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="assets/CISCO Certified — Data Analytics Essentials Certificate.jpg"
+                            alt="CISCO Certified — Introduction to Data Science Certificate.jpg">
+                        <div class="certificate-overlay">
+                            <button class="view-btn">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
                         <h3>CISCO Certified — Introduction to Data Science Certificate</h3>
-                        <div class="project-links">
+                        <p class="certificate-issuer">CISCO</p>
+                        <div class="certificate-links">
                             <a href="assets/CISCO Certified — Data Analytics Essentials Certificate.jpg"
-                                class="btn">Show Certificate</a>
+                                class="btn btn-outline" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Certificate
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="project">
-                    <img src="assets/CISCO Certified — Data Analytics Essentials Certificate.jpg"
-                        alt="CISCO Certified — Data Analytics Essentials Certificate.jpg">
-                    <div class="project-info">
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="assets/CISCO Certified — Data Analytics Essentials Certificate.jpg"
+                            alt="CISCO Certified — Data Analytics Essentials Certificate.jpg">
+                        <div class="certificate-overlay">
+                            <button class="view-btn">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
                         <h3>CISCO Certified — Data Analytics Essentials Certificate</h3>
-                        <div class="project-links">
+                        <p class="certificate-issuer">CISCO</p>
+                        <div class="certificate-links">
                             <a href="assets/CISCO Certified — Data Analytics Essentials Certificate.jpg"
-                                class="btn">Show Certificate</a>
+                                class="btn btn-outline" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Certificate
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="project ">
-                    <img src="assets/Automation Anywhere Certificate.jpg" alt="Automation Anywhere Certificate">
-                    <div class="project-info">
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="assets/Automation Anywhere Certificate.jpg" alt="Automation Anywhere Certificate">
+                        <div class="certificate-overlay">
+                            <button class="view-btn">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
                         <h3>RPA — Robotic Process Automation Certificate</h3>
-                        <div class="project-links">
-                            <a href="assets/Automation Anywhere Certificate.jpg" class="btn">Show Certificate</a>
+                        <p class="certificate-issuer">Automation Anywhere</p>
+                        <div class="certificate-links">
+                            <a href="assets/Automation Anywhere Certificate.jpg" class="btn btn-outline" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Certificate
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -462,15 +895,42 @@
     <!-- Resume Section -->
     <section id="resume" class="section">
         <div class="container">
-            <h2 class="section-title">My Resume</h2>
-            <div class="resume-preview">
-                <img src="assets\rutvik_varankar_resume.jpg" alt="Rutvik Varankar Resume" class="resume-image">
-            </div>
+            <h2 class="section-title">
+                <span class="title-text">My Resume</span>
+                <span class="title-bg">Resume</span>
+            </h2>
             <div class="resume-content">
-                <p>Click the button below to download my resume.</p>
-                <a href="assets/rutvik_varankar_resume.pdf" download="Rutvik_Varankar_Resume.pdf" class="btn">
-                    <i class="fas fa-download"></i> Download Resume
-                </a>
+                <div class="resume-preview">
+                    <div class="resume-frame">
+                        <img src="assets\rutvik_varankar_resume.jpg" alt="Rutvik Varankar Resume" class="resume-image">
+                        <div class="resume-overlay">
+                            <div class="overlay-content">
+                                <h3>Professional Resume</h3>
+                                <p>Click to view or download my complete resume</p>
+                                <div class="resume-actions">
+                                    <button class="btn btn-primary" id="viewResume">
+                                        <i class="fas fa-eye"></i>
+                                        View Full Size
+                                    </button>
+                                    <a href="assets/rutvik_varankar_resume.pdf" download="Rutvik_Varankar_Resume.pdf" class="btn btn-secondary">
+                                        <i class="fas fa-download"></i>
+                                        Download PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-info">
+                    <div class="info-card">
+                        <h3>Download Resume</h3>
+                        <p>Get a complete overview of my skills, experience, and qualifications in a printable format.</p>
+                        <a href="assets/rutvik_varankar_resume.pdf" download="Rutvik_Varankar_Resume.pdf" class="btn btn-download">
+                            <i class="fas fa-download"></i>
+                            Download Resume PDF
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -478,28 +938,94 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title">Contact Me</h2>
+            <h2 class="section-title">
+                <span class="title-text">Contact Me</span>
+                <span class="title-bg">Contact</span>
+            </h2>
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <p><i class="fas fa-envelope"></i> rutvikvarankar06@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> +91 8850522024</p>
-
+                    <div class="contact-header">
+                        <h3>Let's Connect</h3>
+                        <p>I'm always open to discussing new opportunities and interesting projects.</p>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>rutvikvarankar06@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+91 8850522024</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>Mumbai Suburban, India</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="social-links">
-                        <a href="https://github.com/RutvikVarankar?tab=repositories"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/rutvik-varankar-9695a3253/"><i
-                                class="fab fa-linkedin"></i></a>
-                        <a href="https://www.facebook.com/rutvik.varankar.7"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/_.rutvik._06_04/"><i class="fab fa-instagram"></i></a>
+                        <h4>Follow Me</h4>
+                        <div class="social-grid">
+                            <a href="https://github.com/RutvikVarankar?tab=repositories" class="social-link github">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/rutvik-varankar-9695a3253/" class="social-link linkedin">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://www.facebook.com/rutvik.varankar.7" class="social-link facebook">
+                                <i class="fab fa-facebook"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://www.instagram.com/_.rutvik._06_04/" class="social-link instagram">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="contact-buttons">
-                    <a href="mailto:rutvikvarankar06@gmail.com" class="contact-btn email-btn">
-                        <i class="fas fa-envelope"></i> Connect via Email
-                    </a>
-                    <a href="https://wa.me/918850522024" target="_blank" class="contact-btn whatsapp-btn">
-                        <i class="fab fa-whatsapp"></i> Connect via WhatsApp
-                    </a>
+                <div class="contact-actions">
+                    <div class="action-card">
+                        <h3>Get In Touch</h3>
+                        <p>Choose your preferred method to connect with me</p>
+                        <div class="action-buttons">
+                            <a href="mailto:rutvikvarankar06@gmail.com" class="contact-btn email-btn">
+                                <div class="btn-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="btn-content">
+                                    <span class="btn-title">Send Email</span>
+                                    <span class="btn-subtitle">Quick response guaranteed</span>
+                                </div>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="https://wa.me/918850522024" target="_blank" class="contact-btn whatsapp-btn">
+                                <div class="btn-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="btn-content">
+                                    <span class="btn-title">WhatsApp</span>
+                                    <span class="btn-subtitle">Instant messaging</span>
+                                </div>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -508,9 +1034,57 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Rutvik Varankar. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="circle">RV</div>
+                    <div class="footer-text">
+                        <h3>Rutvik Varankar</h3>
+                        <p>Tech Enthusiast & Developer</p>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Quick Links</h4>
+                        <a href="#about">About</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#project">Projects</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Resources</h4>
+                        <a href="#resume">Resume</a>
+                        <a href="#certificate">Certificates</a>
+                        <a href="#internship">Internships</a>
+                        <a href="#Education">Education</a>
+                    </div>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Get notified about my latest projects and updates.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Rutvik Varankar. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/RutvikVarankar?tab=repositories"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/rutvik-varankar-9695a3253/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/rutvik.varankar.7"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/_.rutvik._06_04/"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="Scripts/script.js"></script>
 </body>
