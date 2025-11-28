@@ -1,10 +1,10 @@
 // Enhanced JavaScript with professional animations and interactions
 
 // Loading Screen
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const loadingScreen = document.getElementById('loadingScreen');
     const loadingProgress = document.querySelector('.loading-progress');
-    
+
     // Simulate loading progress
     let progress = 0;
     const interval = setInterval(() => {
@@ -12,7 +12,7 @@ window.addEventListener('load', function() {
         if (progress >= 100) {
             progress = 100;
             clearInterval(interval);
-            
+
             setTimeout(() => {
                 loadingScreen.classList.add('loaded');
                 setTimeout(() => {
@@ -62,7 +62,7 @@ if (hamburger && mobileNav && overlay) {
         mobileNav.classList.toggle('active');
         overlay.classList.toggle('active');
         document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-        
+
         // Add animation delays for menu items
         if (mobileNav.classList.contains('active')) {
             const menuItems = document.querySelectorAll('#mobileNav li');
@@ -131,7 +131,7 @@ let typingSpeed = 100;
 
 function typeWriter() {
     const currentText = texts[textIndex];
-    
+
     if (isDeleting) {
         typedTextElement.textContent = currentText.substring(0, charIndex - 1);
         charIndex--;
@@ -141,7 +141,7 @@ function typeWriter() {
         charIndex++;
         typingSpeed = 100;
     }
-    
+
     if (!isDeleting && charIndex === currentText.length) {
         isDeleting = true;
         typingSpeed = 1000; // Pause at end
@@ -150,7 +150,7 @@ function typeWriter() {
         textIndex = (textIndex + 1) % texts.length;
         typingSpeed = 500; // Pause before typing next
     }
-    
+
     setTimeout(typeWriter, typingSpeed);
 }
 
@@ -161,12 +161,12 @@ setTimeout(typeWriter, 1000);
 function animateCounters() {
     const counters = document.querySelectorAll('.stat-number');
     const speed = 200;
-    
+
     counters.forEach(counter => {
         const target = +counter.getAttribute('data-count');
         const count = +counter.innerText;
         const increment = target / speed;
-        
+
         if (count < target) {
             counter.innerText = Math.ceil(count + increment);
             setTimeout(() => animateCounters(), 1);
@@ -186,7 +186,7 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            
+
             // Animate skill bars
             if (entry.target.classList.contains('skills-container')) {
                 const skillBars = entry.target.querySelectorAll('.skill-progress');
@@ -197,12 +197,12 @@ const observer = new IntersectionObserver((entries) => {
                     }, index * 200);
                 });
             }
-            
+
             // Animate counters in hero section
             if (entry.target.id === 'hero') {
                 setTimeout(animateCounters, 500);
             }
-            
+
             // Add animation delays for staggered effects
             const animatedChildren = entry.target.querySelectorAll('.skill, .project-cards, .timeline-item, .about-cards li');
             animatedChildren.forEach((child, index) => {
@@ -221,18 +221,18 @@ document.querySelectorAll('.section, .skill, .project-cards, .internship-card, .
 function createParticles() {
     const particlesContainer = document.getElementById('heroParticles');
     const particleCount = 30;
-    
+
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
-        
+
         // Random properties
         const size = Math.random() * 4 + 1;
         const posX = Math.random() * 100;
         const posY = Math.random() * 100;
         const delay = Math.random() * 5;
         const duration = Math.random() * 10 + 5;
-        
+
         particle.style.cssText = `
             width: ${size}px;
             height: ${size}px;
@@ -241,7 +241,7 @@ function createParticles() {
             animation-delay: ${delay}s;
             animation-duration: ${duration}s;
         `;
-        
+
         particlesContainer.appendChild(particle);
     }
 }
@@ -267,13 +267,34 @@ backToTop.addEventListener('click', () => {
     });
 });
 
+// Force download function for PDFs
+function forceDownload(url, filename) {
+    fetch(url)
+        .then(response => response.blob())
+        .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        })
+        .catch(err => {
+            console.error('Download failed:', err);
+            // Fallback to opening in new tab
+            window.open(url, '_blank');
+        });
+}
+
 // View Resume functionality
 const viewResumeBtn = document.getElementById('viewResume');
 if (viewResumeBtn) {
     viewResumeBtn.addEventListener('click', () => {
         const resumeImage = document.querySelector('.resume-image');
         const imageUrl = resumeImage.src;
-        
+
         // Create modal for resume view
         const modal = document.createElement('div');
         modal.style.cssText = `
@@ -289,7 +310,7 @@ if (viewResumeBtn) {
             z-index: 10000;
             cursor: pointer;
         `;
-        
+
         const modalImg = document.createElement('img');
         modalImg.src = imageUrl;
         modalImg.style.cssText = `
@@ -299,15 +320,15 @@ if (viewResumeBtn) {
             border-radius: 10px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         `;
-        
+
         modal.appendChild(modalImg);
         document.body.appendChild(modal);
-        
+
         // Close modal on click
         modal.addEventListener('click', () => {
             document.body.removeChild(modal);
         });
-        
+
         // Close modal on Escape key
         document.addEventListener('keydown', function closeModal(e) {
             if (e.key === 'Escape') {
@@ -318,15 +339,35 @@ if (viewResumeBtn) {
     });
 }
 
+// Handle resume download buttons (both links and buttons)
+document.querySelectorAll('a[href*="rutvik_varankar_resume.pdf"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const url = this.href;
+        const filename = this.getAttribute('download') || 'Rutvik_Varankar_Resume.pdf';
+        forceDownload(url, filename);
+    });
+});
+
+// Handle download buttons with data attributes
+document.querySelectorAll('button[data-url]').forEach(button => {
+    button.addEventListener('click', function (e) {
+        e.preventDefault();
+        const url = this.getAttribute('data-url');
+        const filename = this.getAttribute('data-filename') || 'Rutvik_Varankar_Resume.pdf';
+        forceDownload(url, filename);
+    });
+});
+
 // Certificate view functionality
 document.querySelectorAll('.view-btn, .view-certificate').forEach(btn => {
-    btn.addEventListener('click', function(e) {
+    btn.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
-        
+
         const certificateImg = this.closest('.certificate-image').querySelector('img');
         const imageUrl = certificateImg.src;
-        
+
         // Create modal for certificate view
         const modal = document.createElement('div');
         modal.style.cssText = `
@@ -342,7 +383,7 @@ document.querySelectorAll('.view-btn, .view-certificate').forEach(btn => {
             z-index: 10000;
             cursor: pointer;
         `;
-        
+
         const modalImg = document.createElement('img');
         modalImg.src = imageUrl;
         modalImg.style.cssText = `
@@ -352,15 +393,15 @@ document.querySelectorAll('.view-btn, .view-certificate').forEach(btn => {
             border-radius: 10px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         `;
-        
+
         modal.appendChild(modalImg);
         document.body.appendChild(modal);
-        
+
         // Close modal on click
         modal.addEventListener('click', () => {
             document.body.removeChild(modal);
         });
-        
+
         // Close modal on Escape key
         document.addEventListener('keydown', function closeModal(e) {
             if (e.key === 'Escape') {
@@ -373,11 +414,11 @@ document.querySelectorAll('.view-btn, .view-certificate').forEach(btn => {
 
 // Enhanced hover effects for cards
 document.querySelectorAll('.skill, .project-cards, .internship-card, .certificate-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
+    card.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-10px) scale(1.02)';
     });
-    
-    card.addEventListener('mouseleave', function() {
+
+    card.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0) scale(1)';
     });
 });
@@ -386,7 +427,7 @@ document.querySelectorAll('.skill, .project-cards, .internship-card, .certificat
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const parallaxElements = document.querySelectorAll('.shape');
-    
+
     parallaxElements.forEach((element, index) => {
         const speed = 0.5 + (index * 0.1);
         const yPos = -(scrolled * speed);
@@ -397,12 +438,12 @@ window.addEventListener('scroll', () => {
 // Initialize AOS (Animation On Scroll) for additional elements
 function initializeAOS() {
     const elements = document.querySelectorAll('.feature, .tech-tag, .social-link, .contact-item');
-    
+
     elements.forEach((element, index) => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
         element.style.transition = `all 0.6s ease ${index * 0.1}s`;
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -411,7 +452,7 @@ function initializeAOS() {
                 }
             });
         }, { threshold: 0.1 });
-        
+
         observer.observe(element);
     });
 }
@@ -452,7 +493,7 @@ document.head.appendChild(style);
 // Performance optimization: Throttle scroll events
 function throttle(func, limit) {
     let inThrottle;
-    return function() {
+    return function () {
         const args = arguments;
         const context = this;
         if (!inThrottle) {
