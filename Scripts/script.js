@@ -365,7 +365,9 @@ document.querySelectorAll('.view-btn, .view-certificate').forEach(btn => {
         e.preventDefault();
         e.stopPropagation();
 
-        const certificateImg = this.closest('.certificate-image').querySelector('img');
+        const overlay = this.closest('.certificate-overlay');
+        const container = overlay.parentElement;
+        const certificateImg = container.querySelector('img');
         const imageUrl = certificateImg.src;
 
         // Create modal for certificate view
