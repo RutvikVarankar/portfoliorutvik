@@ -1,5 +1,3 @@
-/* Global Styles - Professional Blue Theme */
-
 :root {
     --primary-blue: #1a56db;
     --secondary-blue: #3b82f6;
@@ -1946,13 +1944,7 @@ header.hidden {
     line-height: 1.5;
 }
 
-.project-features li::before {
-    content: "▸";
-    color: var(--primary-blue);
-    font-weight: bold;
-    position: absolute;
-    left: -15px;
-}
+
 
 .project-tech {
     display: flex;
